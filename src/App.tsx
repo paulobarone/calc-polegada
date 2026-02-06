@@ -37,11 +37,7 @@ function App() {
 
     const widthMM = width * pixelPitch;
     const heightMM = height * pixelPitch;
-    console.log("Width in mm:", widthMM);
-    console.log("Height in mm:", heightMM);
-
     const diagonalMM = Math.sqrt(Math.pow(widthMM, 2) + Math.pow(heightMM, 2));
-    console.log("Diagonal in mm:", diagonalMM);
 
     const inches = diagonalMM / 25.4;
     setResult(inches);
@@ -119,7 +115,7 @@ function App() {
           Calcular
         </button>
       </form>
-      {result && (
+      {result !== null && result > 0 && (
         <div className="result-inch">
           <h2>Resultado em Polegadas: {result.toFixed(2)}</h2>
         </div>
